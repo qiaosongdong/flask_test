@@ -12,6 +12,10 @@ def home():
 def signin_form():
     return render_template('form.html')
 
+@app.route('/giveaway', methods=['GET'])
+def giveaway_form():
+    return render_template('giveaway.html')
+
 @app.route('/giveaway', methods=['POST'])
 def giveaway():
     username = request.form['username']
@@ -20,7 +24,7 @@ def giveaway():
         return render_template('signin-ok.html', username=username)
     return render_template('form.html', message='Username exist', username=username)
 
-@app.route('/roll', methods=['POST'])
+@app.route('/roll', methods=['GET'])
 def roll():
     result = random.choice(candidate)
     return render_template('roll-result.html', username=result)
