@@ -22,7 +22,7 @@ def giveaway():
     candidate.append(username)
     if username not in candidate:
         return render_template('signin-ok.html', username=username)
-    return render_template('form.html', message='Username exist', username=username)
+    return render_template('giveaway.html', message='Username exist', username=username)
 
 @app.route('/roll', methods=['GET'])
 def roll():
