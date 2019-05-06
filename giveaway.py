@@ -23,8 +23,8 @@ def giveaway():
     username = request.form['username']
     print username
     #username = str(username)[1:-1]
-    if str(username) not in candidate:
-        candidate.append(str(username))
+    if username not in candidate:
+        candidate.append(username)
         print(candidate)
         return render_template('signin-ok.html', username=username)
     return render_template('giveaway.html', message='Username exist', username=username)
