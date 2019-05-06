@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template
+import random
 
 app = Flask(__name__)
+candidate = []
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -9,6 +11,19 @@ def home():
 @app.route('/signin', methods=['GET'])
 def signin_form():
     return render_template('form.html')
+
+@app.route('/giveaway', methods=['POST'])
+def giveaway():
+    username = request.form['username']
+    candidate.append(username)
+    if username not in candidate:
+        return render_template('signin-ok.html', username=username)
+    return render_template('form.html', message='Username exist', username=username)
+
+@app.route('/roll', methods=['POST'])
+def roll():
+    result = random.choice(candidate)
+    return render_template('roll-result.html', username=result)
 
 @app.route('/signin', methods=['POST'])
 def signin():

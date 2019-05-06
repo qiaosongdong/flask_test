@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Please Sign In</title>
+</head>
+<body>
+  {% if message %}
+  <p style="color:red">{{ message }}</p>
+  {% endif %}
+  <form action="/giveaway" method="post">
+    <legend>Please sign in:</legend>
+    <p><input name="username" placeholder="Username" value="{{ username }}"></p>
+    <p><button type="submit">Sign In</button></p>
+  <form action="/roll" method="post">
+    <p><button type="roll">Roll</button></p>
+  </form>
+</body>
+</html>
