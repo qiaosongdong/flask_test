@@ -22,7 +22,7 @@ def giveaway():
         return render_template('signin-ok.html', username=username)
     return render_template('giveaway.html', message='Username exist', username=username)
 
-@app.route('/roll', methods=['GET'])
+@app.route('/roll', methods=['POST'])
 def roll():
     result = random.choice(candidate)
     return render_template('roll-result.html', username=result)
