@@ -3,6 +3,8 @@
   <title>Please Sign In</title>
 </head>
 <body>
+  {% extends "template.html" %}
+  {% block content %}
   {% if message %}
   <p style="color:red">{{ message }}</p>
   {% endif %}
@@ -14,5 +16,6 @@
   <form action="/roll" method="post">
     <p><button type="roll">Roll</button></p>
   </form>
+  {% endblock %}
 </body>
 </html>
