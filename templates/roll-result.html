@@ -3,6 +3,9 @@
   <title>The winner is {{ username }}</title>
 </head>
 <body>
+  {% extends "template.html" %}
+  {% block content %}
   <p>The winner is {{ username }}!</p>
+  {% endblock %}
 </body>
 </html>

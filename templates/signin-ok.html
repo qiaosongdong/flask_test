@@ -1,8 +1,11 @@
 <html>
 <head>
-  <title>Welcome, {{ username }}</title>
+  <title>You have signed up, {{ username }}</title>
 </head>
 <body>
-  <p>Welcome, {{ username }}!</p>
+  {% extends "template.html" %}
+  {% block content %}
+  <p>You have signed up, {{ username }}!</p>
+  {% endblock %}
 </body>
 </html>

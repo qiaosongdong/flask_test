@@ -6,13 +6,6 @@ import random
 app = Flask(__name__)
 candidate = []
 
-@app.route('/', methods=['GET', 'POST'])
-def home():
-    return render_template('home.html')
-
-@app.route('/signin', methods=['GET'])
-def signin_form():
-    return render_template('form.html')
 
 @app.route('/giveaway', methods=['GET'])
 def giveaway_form():
@@ -21,7 +14,7 @@ def giveaway_form():
 @app.route('/giveaway', methods=['POST'])
 def giveaway():
     username = request.form['username']
-    print username
+    print(username)
     #username = str(username)[1:-1]
     if username not in candidate:
         candidate.append(username)
@@ -33,14 +26,6 @@ def giveaway():
 def roll():
     result = random.choice(candidate)
     return render_template('roll-result.html', username=result)
-
-@app.route('/signin', methods=['POST'])
-def signin():
-    username = request.form['username']
-    password = request.form['password']
-    if username=='admin' and password=='password':
-        return render_template('signin-ok.html', username=username)
-    return render_template('form.html', message='Bad username or password', username=username)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
