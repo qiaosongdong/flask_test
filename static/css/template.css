@@ -81,3 +81,8 @@ h3 {
   color: #444;
   text-decoration: none;
 }
+
+legend {
+  display: block;
+  color: #444;
+}
