@@ -22,12 +22,12 @@ header {
 header h1.logo {
   margin: 0;
   font-size: 1.7em;
-  color: #cccc99;
+  color: #000000;
   text-transform: uppercase;
   float: left;
 }
 header h1.logo:hover {
-  color: #cccc99;
+  color: #000000;
   text-decoration: none;
 }
 /*
