@@ -6,6 +6,10 @@ import random
 app = Flask(__name__)
 candidate = []
 
+@app.route('/roll', methods=['GET'])
+def roll():
+    return render_template('roll.html')
+    
 
 @app.route('/giveaway', methods=['GET'])
 def giveaway_form():
