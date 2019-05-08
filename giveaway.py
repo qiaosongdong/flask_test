@@ -7,7 +7,7 @@ app = Flask(__name__)
 candidate = []
 
 @app.route('/roll', methods=['GET'])
-def roll():
+def roll_home():
     return render_template('roll.html')
     
 
