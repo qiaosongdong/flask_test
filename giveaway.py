@@ -20,7 +20,7 @@ def giveaway():
     username = request.form['username']
     print(username)
     #username = str(username)[1:-1]
-    if username not in candidate:
+    if username not in candidate or username == "":
         candidate.append(username)
         print(candidate)
         return render_template('signin-ok.html', username=username)
