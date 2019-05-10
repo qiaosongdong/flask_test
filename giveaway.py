@@ -24,7 +24,7 @@ def giveaway():
         candidate.append(username)
         print(candidate)
         return render_template('signin-ok.html', username=username)
-    return render_template('giveaway.html', message='Username exist', username=username)
+    return render_template('giveaway.html', message='Username error/already exist', username=username)
 
 @app.route('/roll', methods=['POST'])
 def roll():
