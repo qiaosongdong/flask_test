@@ -20,11 +20,14 @@ def giveaway():
     username = request.form['username']
     print(username)
     #username = str(username)[1:-1]
-    if username not in candidate or username == "":
+    if username not in candidate:
         candidate.append(username)
         print(candidate)
         return render_template('signin-ok.html', username=username)
-    return render_template('giveaway.html', message='Username error/already exist', username=username)
+    elif username == "":
+        return render_template('giveaway.html', message='用户名不得为空', username=username)
+    else:
+        return render_template('giveaway.html', message='Username error/already exist', username=username)
 
 @app.route('/roll', methods=['POST'])
 def roll():
